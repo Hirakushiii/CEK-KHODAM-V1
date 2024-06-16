@@ -3,7 +3,7 @@
     "builds" : [
         {
             "src" : "tailwind.config.js",
-            "use" : "@tailwindjs/vercel-builder"
+            "use" : "@tailwindcss/vercel-builder"
         }
     ]
 }

@@ -41,7 +41,7 @@ document.querySelector('#download-btn').addEventListener('click', async()=>{
                     console.error(response.statusText);
                 };
                 return response.json();
-            }).then((Response) =>{
+            }).then( async(Response) =>{
                 if(Response.status === 'false'){
                     return alert('link salah bro!');
                 }else{
@@ -57,20 +57,19 @@ document.querySelector('#download-btn').addEventListener('click', async()=>{
 
 // FRAGMENT
 function video_fragment(a){
-    return `<div class="card w-96 bg-base-100 shadow-xl image-full mx-auto mt-16">
-            <figure><video src="${a.url}"><video/></figure>
-            <div class="card-body">
-                <h2 class="card-title">Download Di Bawah!</h2>
-                <div class="card-actions">
-                    <a href="${a.url}" class="btn btn-primary w-full">Download</a>
+    return `<div class="card w-96 bg-base-100 shadow-xl mt-7 mx-auto rounded-t-xl">
+                <video src="${a.url}" class="object-fill aspect-video rounded-t-xl" height="25" controls>
+                </video>
+                <div class="card-body items-center text-center">
+                    <div class="card-actions w-full">
+                        <a href="${a.url}" class="btn btn-primary w-full">Download</a>
+                    </div>
                 </div>
-            </div>
-        </div>`;
+            </div>`;
 }
 function loading(){
-    return `<center>
-                <span class="loading loading-ball loading-lg"></span>
-                <span class="loading loading-ball loading-lg"></span>
-                <span class="loading loading-ball loading-lg"></span>
-            </center>`;
+    return `<span class="loading loading-ball loading-lg text-teal-300 dark:text-color-1 mt-10"></span>
+            <span class="loading loading-ball loading-lg text-black/35 dark:text-color-navbar"></span>
+            <span class="loading loading-ball loading-lg text-purple-400 dark:text-color-2"></span>
+            `;
 }

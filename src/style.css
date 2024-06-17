@@ -2260,6 +2260,16 @@ html {
   background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
 }
 
+.bg-color-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(45 50 80 / var(--tw-bg-opacity));
+}
+
+.bg-teal-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(94 234 212 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-30 {
   --tw-bg-opacity: 0.3;
 }
@@ -2274,8 +2284,54 @@ html {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-teal-300 {
+  --tw-gradient-from: #5eead4 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(94 234 212 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-60\% {
+  --tw-gradient-from-position: 60%;
+}
+
+.from-40\% {
+  --tw-gradient-from-position: 40%;
+}
+
 .to-teal-300 {
   --tw-gradient-to: #5eead4 var(--tw-gradient-to-position);
+}
+
+.to-purple-400 {
+  --tw-gradient-to: #c084fc var(--tw-gradient-to-position);
+}
+
+.to-20\% {
+  --tw-gradient-to-position: 20%;
+}
+
+.to-10\% {
+  --tw-gradient-to-position: 10%;
+}
+
+.to-15\% {
+  --tw-gradient-to-position: 15%;
+}
+
+.to-25\% {
+  --tw-gradient-to-position: 25%;
+}
+
+.to-50\% {
+  --tw-gradient-to-position: 50%;
+}
+
+.to-40\% {
+  --tw-gradient-to-position: 40%;
+}
+
+.to-45\% {
+  --tw-gradient-to-position: 45%;
 }
 
 .bg-clip-text {
@@ -2368,6 +2424,11 @@ html {
 .text-teal-300 {
   --tw-text-opacity: 1;
   color: rgb(94 234 212 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .opacity-65 {

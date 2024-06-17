@@ -95,7 +95,7 @@ function video_fragment(a){
             </div>`;
 }
 function foto_fragment(b){
-    return `<a href="${b.url}" class="btn btn-primary w-full mb-1">Download Foto</a>
+    return `<a href="${b.url}" class="btn btn-primary w-full mb-1 ring-0 !text-black dark:text-white bg-gradient-to-r to-45% from-teal-300 to-purple-400 dark:bg-gradient-to-r dark:from-color-1 dark:to-color-2">Download Foto</a>
     `;
 }
 function loading(){

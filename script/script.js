@@ -33,7 +33,7 @@ document.querySelector('#download-btn').addEventListener('click', async()=>{
             title: "Oops...",
             text: "Link yang kamu tuliskan bukan dari instagram brok!"
         });
-    }else{
+    }else if(input_key.value.includes('instagram.com/reel')){
         const apikey = 'https://api.nyxs.pw/dl/ig?url=';
         fetch(`${apikey}${input_key.value}`)
             .then((response) =>{
@@ -52,6 +52,33 @@ document.querySelector('#download-btn').addEventListener('click', async()=>{
             });
         document.querySelector('#download-area').innerHTML = await loading();
         input_key.value = '';
+    }else if(input_key.value.includes('instagram.com/p')){
+        const apikey = 'https://api.nyxs.pw/dl/ig?url=';
+        fetch(`${apikey}${input_key.value}`)
+            .then((response) =>{
+                if (!response.ok){
+                    console.error(response.statusText);
+                };
+                return response.json();
+            }).then( async(Response) =>{
+                if(Response.status === 'false'){
+                    return alert('link salah bro!');
+                }else{
+                    // // console.log(Response.result);
+                    const alldata = Response.result;
+                    let alldata_s = '';
+                    alldata.forEach(e => {
+                        // console.log(e.url);
+                        alldata_s += foto_fragment(e);
+                        document.querySelector('#download-area-foto').innerHTML = alldata_s
+                    });
+                }
+            });
+        document.querySelector('#download-area-foto').innerHTML = await loading();
+        input_key.value = '';
+    }else{
+        alert('error!');
+        input_key.value = '';
     }
 })
 
@@ -66,6 +93,10 @@ function video_fragment(a){
                     </div>
                 </div>
             </div>`;
+}
+function foto_fragment(b){
+    return `<a href="${b.url}" class="btn btn-primary w-full mb-1">Download Foto</a>
+    `;
 }
 function loading(){
     return `<span class="loading loading-ball loading-lg text-teal-300 dark:text-color-1 mt-10"></span>

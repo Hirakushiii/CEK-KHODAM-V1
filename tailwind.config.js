@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'selector',
-  content: ["./index.html"],
+  content: ['index.html'],
   theme: {
+    fontFamily: {
+      'Header' : ['DM Serif Display' , 'cursive']
+    },
     extend: {
-      colors: {
-        'color-1': '#2D3250',
-        'color-2': '#424769',
-        'color-navbar': '#7077A1',
-      },
+      backgroundImage: {
+        'hero-pattern': "url('./harimau-putih.jpeg')",
+      }
     },
   },
   plugins: [
